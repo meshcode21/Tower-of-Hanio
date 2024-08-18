@@ -33,31 +33,35 @@
             left: 50%;
         }
     }
-    .ring {
-        position: absolute;
-        height: 10px;
-        border-radius: 15px;
-        opacity: 0.9;
-    }
-    #ring1 {
-        top: calc(100% - 0px);
-        left: calc(0%);
-        width: calc(20% - 10px);
-        transform: translate(5px, -100%);
-        background-color: red;
-    }
-    #ring2 {
-        top: calc(100% - 10px);
-        left: calc(0%);
-        width: calc(20% - 20px);
-        transform: translate(10px, -100%);
-        background-color: orange;
-    }
-    #ring3 {
-        top: calc(100% - 20px);
-        left: calc(0%);
-        width: calc(20% - 30px);
-        transform: translate(15px, -100%);
-        background-color: green;
-    }
+}
+
+.ring {
+    position: absolute;
+    height: 10px;
+    border-radius: 15px;
+    opacity: 0.9;
+}
+
+#ring1 {
+    top: calc(100% - 0px);
+    left: calc(0%);
+    width: calc(20% - 10px);
+    transform: translate(5px, -100%);
+    background-color: red;
+}
+
+#ring2 {
+    top: calc(100% - 10px);
+    left: calc(0%);
+    width: calc(20% - 20px);
+    transform: translate(10px, -100%);
+    background-color: orange;
+}
+
+#ring3 {
+    top: calc(100% - 20px);
+    left: calc(0%);
+    width: calc(20% - 30px);
+    transform: translate(15px, -100%);
+    background-color: green;
 }

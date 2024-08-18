@@ -1,3 +1,5 @@
+let ring_content = document.querySelector("#container");
+
 // Function to prompt the user for a number less than or equal to 7
 function getNumberInput() {
     let userInput;
@@ -20,18 +22,23 @@ function getNumberInput() {
 }
 
 // Call the function and store the number
-let n = getNumberInput();
+let n = 7; //getNumberInput();
 
-for (i = 1; i <= n; i++) {
-    let ring = document.createElement('div');
-    ring.classList.add('ring');
-    ring.style = `top: calc(100% - ${(i-1)*10}px);
-                left: calc(0%);
-                width: calc(20% - ${i*10}px);
-                transform: translate(${i*5}px, -100%);
-                background-color: ${color(i)};`;
-    ring_content.appendChild(ring);
-}
+let tower = new Array();
+document.querySelectorAll('.tower-box').forEach((element, index) => {
+    tower[index] = element.getBoundingClientRect();
+});
+
+// for (i = 1; i <= n; i++) {
+//     let ring = document.createElement('div');
+//     ring.classList.add('ring');
+//     ring.style = `top: calc(100% - ${(i-1)*10}px);
+//                 left: calc(0%);
+//                 width: calc(20% - ${i*10}px);
+//                 transform: translate(${i*5}px, -100%);
+//                 background-color: ${color(i)};`;
+//     ring_content.appendChild(ring);
+// }
 
 function color(num) {
     switch (num) {
