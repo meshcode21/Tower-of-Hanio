@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    // box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
@@ -27,6 +27,18 @@ body {
             padding: 10px;
             font-size: large;
         }
+        #display {
+            height: 80%;
+            margin: 10px 0;
+            padding: 5px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            #moves {
+                height: 100%;
+                overflow: auto;
+            }
+        }
     }
     .playground {
         width: 100%;
@@ -44,19 +56,25 @@ body {
                 height: 100%;
                 width: 20%;
                 position: relative;
-                .v-line {
+                h3 {
                     position: absolute;
-                    height: 3px;
+                    top: 105%;
                     width: 100%;
-                    top: 100%;
-                    background-color: black;
+                    text-align: center;
                 }
-                .h-line {
+                .v-line {
                     position: absolute;
                     background-color: black;
                     height: 100%;
                     width: 3px;
                     left: 50%;
+                }
+                .h-line {
+                    position: absolute;
+                    height: 3px;
+                    width: 100%;
+                    top: 100%;
+                    background-color: black;
                 }
             }
         }
@@ -65,9 +83,11 @@ body {
 
 .ring {
     position: absolute;
-    // height: 10px;
     border-radius: 15px;
     opacity: 0.9;
+    display: flex;
+    align-items: center;
+    padding: 10px;
 }
 
 #ring1 {

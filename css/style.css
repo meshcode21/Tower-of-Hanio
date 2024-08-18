@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -28,6 +29,18 @@ body {
   padding: 10px;
   font-size: large;
 }
+.container .side-nav #display {
+  height: 80%;
+  margin: 10px 0;
+  padding: 5px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+.container .side-nav #display #moves {
+  height: 100%;
+  overflow: auto;
+}
 .container .playground {
   width: 100%;
   height: 100%;
@@ -47,25 +60,34 @@ body {
   width: 20%;
   position: relative;
 }
-.container .playground .tower-container .tower .v-line {
+.container .playground .tower-container .tower h3 {
   position: absolute;
-  height: 3px;
+  top: 105%;
   width: 100%;
-  top: 100%;
-  background-color: black;
+  text-align: center;
 }
-.container .playground .tower-container .tower .h-line {
+.container .playground .tower-container .tower .v-line {
   position: absolute;
   background-color: black;
   height: 100%;
   width: 3px;
   left: 50%;
 }
+.container .playground .tower-container .tower .h-line {
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  top: 100%;
+  background-color: black;
+}
 
 .ring {
   position: absolute;
   border-radius: 15px;
   opacity: 0.9;
+  display: flex;
+  align-items: center;
+  padding: 10px;
 }
 
 #ring1 {

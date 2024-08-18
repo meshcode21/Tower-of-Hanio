@@ -20,11 +20,13 @@ function getNumberInput() {
 }
 
 // Call the function and store the number
-let n = 10; //getNumberInput();
+let n_of_rings = 3; //getNumberInput();
+document.getElementById('ring-counter').innerText = n_of_rings;
 
-for (i = 1; i <= n; i++) {
+for (i = 1; i <= n_of_rings; i++) {
     let ring = document.createElement('div');
     ring.classList.add('ring');
+    ring.innerText = i;
     ring.style = `width: ${tower[0].width * (100 - i*5)/100}px;
                 height: ${tower[0].height*0.09}px;
                 top: ${tower[0].bottom - tower[0].height*0.09*i}px;

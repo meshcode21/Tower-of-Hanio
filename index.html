@@ -11,23 +11,30 @@
 <body>
     <div class="container">
         <nav class="side-nav">
-            <h3>No. of Rings: <span id="ring-counter"></span></h3>
-            <div id="moves-display"></div>
-            <button id="solve-btn">Solve</button>
+            <h2>No. of Rings: <span id="ring-counter"></span></h3>
+                <div id="display">
+                    <h3 style="text-align: center; border-bottom: 1px solid gray;">Moves</h3>
+                    <div id="moves">
+                    </div>
+                </div>
+                <button id="solve-btn">Solve</button>
         </nav>
         <div class="playground">
             <div class="tower-container">
                 <div class="tower">
                     <div class="v-line"></div>
                     <div class="h-line"></div>
+                    <h3>Tower - A</h3>
                 </div>
                 <div class="tower">
                     <div class="v-line"></div>
                     <div class="h-line"></div>
+                    <h3>Tower - B</h3>
                 </div>
                 <div class="tower">
                     <div class="v-line"></div>
                     <div class="h-line"></div>
+                    <h3>Tower - C</h3>
                 </div>
             </div>
         </div>
@@ -39,7 +46,8 @@
             tower[index] = element.getBoundingClientRect();
         });
     </script>
-    <script src="js/ring_generte.js"></script>
+    <script src="js/ring_generator.js"></script>
+    <script src="js/solver.js"></script>
     <!-- <script src="js/triger.js"></script> -->
 </body>
 
