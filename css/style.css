@@ -3,60 +3,75 @@
   padding: 0;
 }
 
+body {
+  height: 100vh;
+}
+
 .container {
-  aspect-ratio: 16/5;
-  width: min(620px, 80vw);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: min(100vw, 1400px);
+  height: min(100vh, 770px);
+  margin: auto;
+  display: flex;
+}
+.container .side-nav {
+  width: 30%;
+  height: 100%;
+  background-color: antiquewhite;
+  border-right: 2px solid gray;
+  box-sizing: border-box;
+  padding: 20px 10px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
 }
-.container .tower-box {
+.container .side-nav #solve-btn {
+  padding: 10px;
+  font-size: large;
+}
+.container .playground {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .playground .tower-container {
+  aspect-ratio: 16/5;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.container .playground .tower-container .tower {
   height: 100%;
   width: 20%;
   position: relative;
 }
-.container .tower-box .v-line {
+.container .playground .tower-container .tower .v-line {
   position: absolute;
   height: 3px;
   width: 100%;
   top: 100%;
   background-color: black;
 }
-.container .tower-box .h-line {
+.container .playground .tower-container .tower .h-line {
   position: absolute;
   background-color: black;
   height: 100%;
   width: 3px;
   left: 50%;
 }
-.container .ring {
+
+.ring {
   position: absolute;
-  height: 10px;
   border-radius: 15px;
   opacity: 0.9;
 }
-.container #ring1 {
+
+#ring1 {
   top: calc(100% - 0px);
   left: 0%;
   width: calc(20% - 10px);
   transform: translate(5px, -100%);
   background-color: red;
-}
-.container #ring2 {
-  top: calc(100% - 10px);
-  left: 0%;
-  width: calc(20% - 20px);
-  transform: translate(10px, -100%);
-  background-color: orange;
-}
-.container #ring3 {
-  top: calc(100% - 20px);
-  left: 0%;
-  width: calc(20% - 30px);
-  transform: translate(15px, -100%);
-  background-color: green;
 }/*# sourceMappingURL=style.css.map */

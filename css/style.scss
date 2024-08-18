@@ -1,43 +1,71 @@
 * {
     margin: 0;
     padding: 0;
+    // box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
 }
 
 .container {
-    // border: 3px solid red;
-    aspect-ratio: 16/5;
-    width: min(620px, 80vw);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: min(100vw, 1400px);
+    height: min(100vh, 770px);
+    margin: auto;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .tower-box {
+    .side-nav {
+        width: 30%;
         height: 100%;
-        width: 20%;
-        position: relative;
-        .v-line {
-            position: absolute;
-            height: 3px;
-            width: 100%;
-            top: 100%;
-            background-color: black;
+        background-color: antiquewhite;
+        border-right: 2px solid gray;
+        box-sizing: border-box;
+        padding: 20px 10px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        #solve-btn {
+            padding: 10px;
+            font-size: large;
         }
-        .h-line {
-            position: absolute;
-            background-color: black;
-            height: 100%;
-            width: 3px;
-            left: 50%;
+    }
+    .playground {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .tower-container {
+            aspect-ratio: 16/5;
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            .tower {
+                height: 100%;
+                width: 20%;
+                position: relative;
+                .v-line {
+                    position: absolute;
+                    height: 3px;
+                    width: 100%;
+                    top: 100%;
+                    background-color: black;
+                }
+                .h-line {
+                    position: absolute;
+                    background-color: black;
+                    height: 100%;
+                    width: 3px;
+                    left: 50%;
+                }
+            }
         }
     }
 }
 
 .ring {
     position: absolute;
-    height: 10px;
+    // height: 10px;
     border-radius: 15px;
     opacity: 0.9;
 }
@@ -48,20 +76,4 @@
     width: calc(20% - 10px);
     transform: translate(5px, -100%);
     background-color: red;
-}
-
-#ring2 {
-    top: calc(100% - 10px);
-    left: calc(0%);
-    width: calc(20% - 20px);
-    transform: translate(10px, -100%);
-    background-color: orange;
-}
-
-#ring3 {
-    top: calc(100% - 20px);
-    left: calc(0%);
-    width: calc(20% - 30px);
-    transform: translate(15px, -100%);
-    background-color: green;
 }

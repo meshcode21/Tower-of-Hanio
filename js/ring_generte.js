@@ -1,11 +1,9 @@
-let ring_content = document.querySelector("#container");
-
 // Function to prompt the user for a number less than or equal to 7
 function getNumberInput() {
     let userInput;
 
     do {
-        userInput = prompt("Please enter a number (number must between 0 to 8):");
+        userInput = prompt("Please enter a number (number must from 1 to 10):");
 
         // Check if the input is a number, not empty, and less than or equal to 7
         if (userInput === null) {
@@ -13,8 +11,8 @@ function getNumberInput() {
             return null; // User cancelled the prompt
         } else if (isNaN(userInput) || userInput.trim() === "") {
             alert("That's not a valid number. Please try again.");
-        } else if (Number(userInput) > 7 || Number(userInput) < 1) {
-            alert("The number must between 0 to 8. Please try again.");
+        } else if (Number(userInput) > 10 || Number(userInput) < 1) {
+            alert("The number must from 1 to 10. Please try again.");
         } else {
             return Number(userInput); // Return the valid number
         }
@@ -22,39 +20,20 @@ function getNumberInput() {
 }
 
 // Call the function and store the number
-let n = 7; //getNumberInput();
+let n = 10; //getNumberInput();
 
-let tower = new Array();
-document.querySelectorAll('.tower-box').forEach((element, index) => {
-    tower[index] = element.getBoundingClientRect();
-});
-
-// for (i = 1; i <= n; i++) {
-//     let ring = document.createElement('div');
-//     ring.classList.add('ring');
-//     ring.style = `top: calc(100% - ${(i-1)*10}px);
-//                 left: calc(0%);
-//                 width: calc(20% - ${i*10}px);
-//                 transform: translate(${i*5}px, -100%);
-//                 background-color: ${color(i)};`;
-//     ring_content.appendChild(ring);
-// }
+for (i = 1; i <= n; i++) {
+    let ring = document.createElement('div');
+    ring.classList.add('ring');
+    ring.style = `width: ${tower[0].width * (100 - i*5)/100}px;
+                height: ${tower[0].height*0.09}px;
+                top: ${tower[0].bottom - tower[0].height*0.09*i}px;
+                left: ${tower[0].left + tower[0].width * (1 - (100 - i*5)/100) / 2}px;
+                background-color: ${color(i)};`;
+    document.querySelector('body').appendChild(ring);
+}
 
 function color(num) {
-    switch (num) {
-        case 1:
-            return 'red';
-        case 2:
-            return 'orange';
-        case 3:
-            return 'green';
-        case 4:
-            return 'yellow';
-        case 5:
-            return 'indigo';
-        case 6:
-            return 'blue';
-        case 7:
-            return 'violet';
-    }
+    const colors = ['Magenta', 'Red', 'Orange', 'Green', 'Indigo', 'gray', 'Blue', 'Violet'];
+    return colors[num % 8];
 }
