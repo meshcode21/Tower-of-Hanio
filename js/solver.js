@@ -12,7 +12,7 @@ let moves_div = document.getElementById("moves");
 
 // algorithm to solve the problem...
 function TOH(n, A, B, C) {
-    timeout = timeout + 150;
+    timeout = timeout + 120;
     if (n > 0) {
         TOH(n - 1, A, C, B);
         setTimeout(() => {
@@ -74,7 +74,7 @@ function moveElement(element, endX, endY, peakY) {
         element.style.top = y + 'px';
 
         // Increment t to move the element along the path
-        t += 0.05; // Increase this value to speed up the animation
+        t += 0.05; // Increase this value to speed up the animation (0.05 or 0.1 recommended)
 
         if (t <= 1.05) {
             requestAnimationFrame(fn);
