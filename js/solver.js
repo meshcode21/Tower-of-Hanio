@@ -9,10 +9,10 @@ let count = 0,
     timeout = 0;
 
 let moves_div = document.getElementById("moves");
-// moves_div
+
 // algorithm to solve the problem...
 function TOH(n, A, B, C) {
-    timeout = timeout + 50;
+    timeout = timeout + 150;
     if (n > 0) {
         TOH(n - 1, A, C, B);
         setTimeout(() => {
@@ -33,9 +33,9 @@ function move(ring, source, destination) {
     source.count--;
     destination.count++;
 
-    endX = ring.offsetLeft + destination.rect.left - source.rect.left;
-    endY = destination.rect.bottom - ring.offsetHeight * destination.count;
-    moveElement(ring, endX, endY, source.rect.top - 10);
+    const endX = ring.offsetLeft + destination.rect.left - source.rect.left;
+    const endY = destination.rect.bottom - ring.offsetHeight * destination.count;
+    moveElement(ring, endX, endY, source.rect.top - ring.offsetHeight);
 }
 
 
@@ -44,15 +44,11 @@ function move(ring, source, destination) {
 function moveElement(element, endX, endY, peakY) {
     const startX = element.offsetLeft; // Start point X-coordinate
     const startY = element.offsetTop; // Start point Y-coordinate
-    // const peakY = source.top - 50; // Y-coordinate of the peak for vertical upward motion
     const controlX = (startX + endX) / 2; // Control point X-coordinate (peak of the arc)
-    const controlY = peakY - 80; // Control point Y-coordinate (peak of the arc)
-    // const endX = 300; // End point X-coordinate
-    // const endY = 300; // End point Y-coordinate (final downward position)
+    const controlY = peakY - 150; // Control point Y-coordinate (peak of the arc)
 
     // const element = ele;
     let t = 0; // Parameter t for interpolation
-
 
     const fn = () => {
         let x, y;
@@ -78,9 +74,9 @@ function moveElement(element, endX, endY, peakY) {
         element.style.top = y + 'px';
 
         // Increment t to move the element along the path
-        t += 0.1; // Increase this value to speed up the animation
+        t += 0.05; // Increase this value to speed up the animation
 
-        if (t <= 1) {
+        if (t <= 1.05) {
             requestAnimationFrame(fn);
         }
     }
