@@ -20,19 +20,20 @@ function getNumberInput() {
 }
 
 // Call the function and store the number
-let n_of_rings = 3; //getNumberInput();
+let n_of_rings = getNumberInput();
 document.getElementById('ring-counter').innerText = n_of_rings;
 
 for (i = 1; i <= n_of_rings; i++) {
     let ring = document.createElement('div');
     ring.classList.add('ring');
-    ring.innerText = i;
-    ring.style = `width: ${tower[0].width * (100 - i*5)/100}px;
-                height: ${tower[0].height*0.09}px;
-                top: ${tower[0].bottom - tower[0].height*0.09*i}px;
-                left: ${tower[0].left + tower[0].width * (1 - (100 - i*5)/100) / 2}px;
+    ring.innerText = n_of_rings - i + 1;
+    ring.style = `width: ${tower[0].rect.width * (100 - i*5)/100}px;
+                height: ${tower[0].rect.height*0.09}px;
+                top: ${tower[0].rect.bottom - tower[0].rect.height*0.09*i}px;
+                left: ${tower[0].rect.left + tower[0].rect.width * (1 - (100 - i*5)/100) / 2}px;
                 background-color: ${color(i)};`;
     document.querySelector('body').appendChild(ring);
+    tower[0].count++;
 }
 
 function color(num) {

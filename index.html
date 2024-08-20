@@ -41,14 +41,18 @@
     </div>
 
     <script>
+        let char = 65;
         let tower = new Array();
         document.querySelectorAll('.tower').forEach((element, index) => {
-            tower[index] = element.getBoundingClientRect();
+            tower[index] = {
+                rect: element.getBoundingClientRect(),
+                count: 0,
+                name: String.fromCharCode(char++)
+            };
         });
     </script>
     <script src="js/ring_generator.js"></script>
     <script src="js/solver.js"></script>
-    <!-- <script src="js/triger.js"></script> -->
 </body>
 
 </html>
